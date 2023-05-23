@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.vmn.aisle.splash.SplashFragment"
+        android:label="SplashFragment">
+        <action
+            android:id="@+id/action_splashFragment_to_phoneNumberFragment"
+            app:destination="@id/phoneNumberFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_discoverFragment"
+            app:destination="@id/discoverFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/phoneNumberFragment"
+        android:name="com.vmn.aisle.auth.PhoneNumberFragment"
+        android:label="PhoneNumberFragment">
+        <action
+            android:id="@+id/action_phoneNumberFragment_to_OTPFragment"
+            app:destination="@id/OTPFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/OTPFragment"
+        android:name="com.vmn.aisle.auth.OTPFragment"
+        android:label="OTPFragment">
+        <action
+            android:id="@+id/action_OTPFragment_to_discoverFragment"
+            app:destination="@id/discoverFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="number"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.vmn.aisle.home.NotesFragment"
+        android:label="NotesFragment" />
+    <fragment
+        android:id="@+id/discoverFragment"
+        android:name="com.vmn.aisle.home.DiscoverFragment"
+        android:label="DiscoverFragment" />
+    <fragment
+        android:id="@+id/matchesFragment"
+        android:name="com.vmn.aisle.home.MatchesFragment"
+        android:label="fragment_matches"
+        tools:layout="@layout/fragment_matches" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.vmn.aisle.home.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>
