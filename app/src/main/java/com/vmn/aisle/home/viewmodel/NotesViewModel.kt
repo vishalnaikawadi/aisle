@@ -25,7 +25,7 @@ class NotesViewModel(
     fun getNotesDetails() {
         CoroutineScope(Dispatchers.IO).launch {
             showProgress()
-            val response = useCase.getNotesDetails("")
+            val response = useCase.getNotesDetails()
 
             withContext(Dispatchers.Main) {
                 hideProgress()
